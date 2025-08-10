@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mood Dice - Fun Random Positive Actions & Mini Challenges</title>
+  <meta name="description" content="Roll the Mood Dice to get fun, random positive actions and mini challenges to brighten your day. Perfect for quick wellness breaks and fun activities." />
+  <meta name="keywords" content="mood dice, positive actions, mini challenges, fun dice roller, wellness tool, random prompts" />
+  <meta name="author" content="YourName" />
+  
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Mood Dice - Fun Random Positive Actions" />
+  <meta property="og:description" content="Roll the Mood Dice to get fun, random positive actions and mini challenges to brighten your day." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:image" content="https://yourdomain.com/mood-dice-image.png" />
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      color: #222;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.2em;
+    }
+    main {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      max-width: 450px;
+      width: 100%;
+    }
+    #dice {
+      font-size: 4rem;
+      margin: 20px 0;
+      padding: 20px;
+      border: 6px solid #66a6ff;
+      border-radius: 20px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.3s ease;
+      background-color: #e0f7fa;
+    }
+    #dice:active {
+      transform: scale(0.95);
+    }
+    button#rollBtn {
+      background-color: #66a6ff;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(102,166,255,0.5);
+      transition: background-color 0.3s ease;
+      margin-top: 15px;
+    }
+    button#rollBtn:hover {
+      background-color: #4a85d7;
+    }
+    footer {
+      margin-top: auto;
+      padding: 15px 10px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mood Dice</h1>
+    <p>Roll the dice to get a fun positive action or mini challenge!</p>
+  </header>
+  <main>
+    <div id="dice" aria-live="polite" role="region" tabindex="0" aria-label="Mood Dice result">
+      🎲 Roll Me!
+    </div>
+    <button id="rollBtn" aria-describedby="dice">Roll the Mood Dice</button>
+  </main>
+  <footer>
+    &copy; 2025 YourName &mdash; Fun wellness and positive action tools.
+  </footer>
+
+  <script>
+    const prompts = [
+      "Do 5 jumping jacks 🏃‍♂️",
+      "Compliment someone 😊",
+      "Take a 2-minute dance break 💃",
+      "Write down one thing you're grateful for 📝",
+      "Try a new word in conversation 🗣️",
+      "Smile for 30 seconds 😄",
+      "Drink a glass of water 💧",
+      "Stretch your arms and back 🧘‍♂️",
+      "Take three deep breaths 🌬️",
+      "Send a positive message to a friend 📱"
+    ];
+
+    const dice = document.getElementById('dice');
+    const rollBtn = document.getElementById('rollBtn');
+
+    function rollMoodDice() {
+      // Animate dice roll
+      dice.textContent = "Rolling...";
+      dice.style.transform = "rotate(360deg)";
+      rollBtn.disabled = true;
+
+      setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * prompts.length);
+        dice.textContent = prompts[randomIndex];
+        dice.style.transform = "rotate(0deg)";
+        rollBtn.disabled = false;
+      }, 1000);
+    }
+
+    rollBtn.addEventListener('click', rollMoodDice);
+
+    // Optional: Roll dice when user presses Enter or Space while focused on dice div
+    dice.addEventListener('keydown', e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        rollMoodDice();
+      }
+    });
+  </script>
+</body>
+</html>
