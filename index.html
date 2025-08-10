@@ -16,14 +16,13 @@
   <meta property="og:description" content="Roll the Mood Dice to get fun, random positive actions and mini challenges to brighten your day." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mood-dice.vercel.app/" />
-  <!-- Replace with your actual image URL or remove if you don't have one -->
-  <meta property="og:image" content="https://mood-dice.vercel.app/mood-dice-image.png" />
+  <meta property="og:image" content="https://mood-dice.vercel.app/Mood-Dice.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mood Dice - Fun Random Positive Actions" />
   <meta name="twitter:description" content="Roll the Mood Dice to get fun, random positive actions and mini challenges to brighten your day." />
-  <meta name="twitter:image" content="https://mood-dice.vercel.app/mood-dice-image.png" />
+  <meta name="twitter:image" content="https://mood-dice.vercel.app/Mood-Dice.png" />
 
   <!-- JSON-LD structured data -->
   <script type="application/ld+json">
@@ -104,12 +103,19 @@
       font-size: 0.9rem;
       color: #555;
     }
+    header img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 15px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Mood Dice</h1>
     <p>Roll the dice to get a fun positive action or mini challenge!</p>
+    <img src="https://mood-dice.vercel.app/Mood-Dice.png" alt="Screenshot of Mood Dice tool" />
   </header>
   <main>
     <div id="dice" aria-live="polite" role="region" tabindex="0" aria-label="Mood Dice result">
