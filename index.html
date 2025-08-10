@@ -7,14 +7,42 @@
   <meta name="description" content="Roll the Mood Dice to get fun, random positive actions and mini challenges to brighten your day. Perfect for quick wellness breaks and fun activities." />
   <meta name="keywords" content="mood dice, positive actions, mini challenges, fun dice roller, wellness tool, random prompts" />
   <meta name="author" content="YourName" />
-  
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://mood-dice.vercel.app/" />
+
   <!-- Open Graph for social sharing -->
   <meta property="og:title" content="Mood Dice - Fun Random Positive Actions" />
   <meta property="og:description" content="Roll the Mood Dice to get fun, random positive actions and mini challenges to brighten your day." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourdomain.com" />
-  <meta property="og:image" content="https://yourdomain.com/mood-dice-image.png" />
-  
+  <meta property="og:url" content="https://mood-dice.vercel.app/" />
+  <!-- Replace with your actual image URL or remove if you don't have one -->
+  <meta property="og:image" content="https://mood-dice.vercel.app/mood-dice-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mood Dice - Fun Random Positive Actions" />
+  <meta name="twitter:description" content="Roll the Mood Dice to get fun, random positive actions and mini challenges to brighten your day." />
+  <meta name="twitter:image" content="https://mood-dice.vercel.app/mood-dice-image.png" />
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Mood Dice",
+    "url": "https://mood-dice.vercel.app/",
+    "description": "Roll the Mood Dice to get fun, random positive actions and mini challenges to brighten your day.",
+    "applicationCategory": "Game",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -111,7 +139,6 @@
     const rollBtn = document.getElementById('rollBtn');
 
     function rollMoodDice() {
-      // Animate dice roll
       dice.textContent = "Rolling...";
       dice.style.transform = "rotate(360deg)";
       rollBtn.disabled = true;
@@ -126,7 +153,6 @@
 
     rollBtn.addEventListener('click', rollMoodDice);
 
-    // Optional: Roll dice when user presses Enter or Space while focused on dice div
     dice.addEventListener('keydown', e => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
